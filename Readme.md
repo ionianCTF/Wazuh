@@ -16,6 +16,6 @@ cd single-node
 
 docker-compose -f generate-indexer-certs.yml run --rm generator
 
-sudo nano echo "vm.max_map_count=262144" >> /etc/sysctl.conf
+echo 'vm.max_map_count=262144' | sudo tee -a /etc/sysctl.conf
 
 sudo docker-compose up -d
